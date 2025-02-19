@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3308:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=springuser
+      - MYSQL_PASSWORD=ThePassword
+      - MYSQL_DATABASE=db_inv_assistatnt
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"
